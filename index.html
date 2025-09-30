@@ -7,6 +7,8 @@
     <meta name="description" content="LuckySweets.ae offers delicious candies, refreshing drinks, and fun lucky games in the UAE. Visit us for a sweet experience!">
     <!-- Add font-display for better loading -->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;500;600;700&display=swap&font-display=swap" rel="stylesheet">
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --light-sky-blue: #BBDEFB;
@@ -396,6 +398,41 @@
             aria-hidden: true;
         }
         
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--magenta), var(--soft-pink));
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        
+        .social-link.tiktok {
+            background: linear-gradient(135deg, #000000, #25F4EE, #FE2C55);
+        }
+        
+        .social-link.instagram {
+            background: linear-gradient(135deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+        }
+        
         /* Floating candies animation */
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -519,7 +556,8 @@
             .item-price,
             .free-item {
                 font-size: 1.2rem;
-            }        }
+            }
+        }
     </style>
 </head>
 <body>
@@ -552,9 +590,17 @@
             </div>
             
             <div class="contact-info">
-                 <div class="contact-item">
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+971 50 123 4567</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <span>info@luckysweets.ae</span>
+                </div>
+                <div class="contact-item">
                     <span>🕒</span>
-                    <span>Open Daily: 6 PM - 11 PM</span>
+                    <span>Open Daily: 10 AM - 10 PM</span>
                 </div>
             </div>
         </section>
@@ -606,8 +652,19 @@
                             <div class="item-description">Assorted sweet treats</div>
                         </div>
                     </div>
-                    <span class="item-price">15 AED</span>
+                    <span class="item-price">10 AED</span>
                 </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <span class="item-icon">🍫</span>
+                        <div>
+                            <div class="item-name">Chocolate Box</div>
+                            <div class="item-description">Premium chocolate selection</div>
+                        </div>
+                    </div>
+                    <span class="item-price">25 AED</span>
+                </div>
+            </div>
         </section>
         
         <!-- Lucky Games Section -->
@@ -640,16 +697,6 @@
                 </div>
                 <div class="menu-item">
                     <div class="item-info">
-                        <span class="item-icon">🪙</span>
-                        <div>
-                            <div class="item-name">Coin Game (Bowl & Cup)</div>
-                            <div class="item-description">Win Candy 25 g Bag or Small Mojito</div>
-                        </div>
-                    </div>
-                    <span class="free-item">FREE with any order</span>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
                         <span class="item-icon">🎈</span>
                         <div>
                             <div class="item-name">Balloon </div>
@@ -658,10 +705,28 @@
                     </div>
                     <span class="free-item">FREE with any order</span>
                 </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <span class="item-icon">🪙</span>
+                        <div>
+                            <div class="item-name">Coin Game (Bowl & Cup)</div>
+                            <div class="item-description">Win Candy Bag or Small Mojito</div>
+                        </div>
+                    </div>
+                    <span class="free-item">FREE with any order</span>
+                </div>
             </div>
         </section>
         
         <footer class="footer">
+            <div class="social-links">
+                <a href="https://instagram.com/luckysweets.ae" class="social-link instagram" target="_blank" aria-label="Follow us on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://tiktok.com/@luckysweets.ae" class="social-link tiktok" target="_blank" aria-label="Follow us on TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
             <p>All games are subject to availability. Winners must be present to claim prize.</p>
             <p>Follow us on social media for special offers!</p>
         </footer>
