@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LuckySweets.ae - Where Sweet Meets Luck!</title>
     <meta name="description" content="LuckySweets.ae offers delicious candies, refreshing drinks, and fun lucky games in the UAE. Visit us for a sweet experience!">
-    <!-- Add font-display for better loading -->
+    <!-- Fonts with font-display for performance -->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;500;600;700&display=swap&font-display=swap" rel="stylesheet">
-    <!-- Font Awesome for social icons -->
+    <!-- Font Awesome - fixed whitespace -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -19,7 +19,7 @@
             --soft-pink: #F48FB1;
             --lilac: #CE93D8;
             --chocolate-brown: #5D4037;
-            --text-secondary: #444; /* Improved contrast */
+            --text-secondary: #444;
         }
         
         * {
@@ -54,7 +54,6 @@
             overflow: hidden;
         }
         
-        /* Candy border effect */
         .container::before {
             content: '';
             position: absolute;
@@ -72,7 +71,6 @@
             border-radius: 30px 30px 0 0;
         }
         
-        /* Header Styles */
         .header {
             text-align: center;
             margin-bottom: 40px;
@@ -101,8 +99,6 @@
             transform: translateY(-50%);
             font-size: 2rem;
             filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.1));
-            /* Hide from screen readers */
-            aria-hidden: true;
         }
         
         .logo::before { left: -50px; }
@@ -122,7 +118,6 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
         
-        /* Section Styles */
         .section {
             margin-bottom: 40px;
             position: relative;
@@ -153,8 +148,6 @@
             right: 0;
             opacity: 0.8;
             filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.1));
-            /* Decorative — hide from screen readers */
-            aria-hidden: true;
         }
         
         .section-divider {
@@ -215,8 +208,6 @@
             background-color: white;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
-            /* Decorative icon */
-            aria-hidden: true;
         }
         
         .menu-item:hover .item-icon {
@@ -234,7 +225,6 @@
             margin-top: 5px;
         }
         
-        /* Base price style */
         .item-price,
         .free-item {
             font-weight: 800;
@@ -249,7 +239,6 @@
             transform: scale(1.05);
         }
         
-        /* Section-specific styles */
         .drinks-section .section-title {
             color: white;
             background: linear-gradient(135deg, var(--forest-green), #4CAF50);
@@ -310,7 +299,6 @@
             border: 2px dashed var(--forest-green);
         }
         
-        /* New elements */
         .intro-section {
             text-align: center;
             margin-bottom: 40px;
@@ -375,7 +363,6 @@
             font-size: 0.95rem;
         }
         
-        /* Footer */
         .footer {
             text-align: center;
             margin-top: 40px;
@@ -395,7 +382,6 @@
             background: white;
             padding: 0 15px;
             font-size: 1.2rem;
-            aria-hidden: true;
         }
         
         .social-links {
@@ -433,7 +419,6 @@
             background: linear-gradient(135deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
         }
         
-        /* Floating candies animation */
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(0deg); }
             50% { transform: translateY(-15px) rotate(5deg); }
@@ -447,7 +432,7 @@
             z-index: 0;
             filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.2));
             /* Hide from screen readers */
-            aria-hidden: true;
+            aria-hidden="true";
         }
         
         .candy-1 { top: 8%; left: 4%; animation-delay: 0s; }
@@ -457,7 +442,6 @@
         .candy-5 { top: 40%; left: 8%; animation-delay: 0.4s; }
         .candy-6 { top: 60%; right: 7%; animation-delay: 1.8s; }
         
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             .container {
                 padding: 25px 20px;
@@ -562,177 +546,171 @@
 </head>
 <body>
     <div class="container">
-        <!-- Floating candies (decorative) -->
-        <div class="floating-candy candy-1">🍭</div>
-        <div class="floating-candy candy-2">🍬</div>
-        <div class="floating-candy candy-3">🍫</div>
-        <div class="floating-candy candy-4">🍡</div>
-        <div class="floating-candy candy-5">🧁</div>
-        <div class="floating-candy candy-6">🎂</div>
+        <!-- Floating candies - now properly hidden from screen readers -->
+        <div class="floating-candy candy-1" aria-hidden="true">🍭</div>
+        <div class="floating-candy candy-2" aria-hidden="true">🍬</div>
+        <div class="floating-candy candy-3" aria-hidden="true">🍫</div>
+        <div class="floating-candy candy-4" aria-hidden="true">🍡</div>
+        <div class="floating-candy candy-5" aria-hidden="true">🧁</div>
+        <div class="floating-candy candy-6" aria-hidden="true">🎂</div>
         
-        <header class="header">
+        <header class="header" role="banner">
             <h1 class="logo">LuckySweets.ae</h1>
             <p class="slogan">Where Sweet Meets Luck!</p>
-            <div class="social-links">
-                <a href="https://instagram.com/luckysweets.ae" class="social-link instagram" target="_blank" aria-label="Follow us on Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://tiktok.com/@luckysweets.ae" class="social-link tiktok" target="_blank" aria-label="Follow us on TikTok">
-                    <i class="fab fa-tiktok"></i>
-                </a>
-            </div>
         </header>
-        
-               
-        <!-- Drinks Section -->
-        <section class="section drinks-section">
-            <div class="section-header">
-                <h2 class="section-title">Drinks</h2>
-                <div class="candy-decoration">🥤🍹🧊</div>
-            </div>
-            <div class="section-divider"></div>
-            <div class="menu-items">
-                <div class="menu-item">
-                    <div class="item-info">
-                        <span class="item-icon">🧊</span>
-                        <div>
-                            <div class="item-name">Mojito Cup (1)</div>
-                            <div class="item-description">Refreshing minty delight</div>
-                        </div>
-                    </div>
-                    <span class="item-price">15 AED</span>
+
+        <main>
+            <!-- Drinks Section -->
+            <section class="section drinks-section" aria-labelledby="drinks-title">
+                <div class="section-header">
+                    <h2 id="drinks-title" class="section-title">Drinks</h2>
+                    <div class="candy-decoration" aria-hidden="true">🥤🍹🧊</div>
                 </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <span class="item-icon">🧃</span>
-                        <div>
-                            <div class="item-name">Fruit Punch</div>
-                            <div class="item-description">Mixed fruit refreshment</div>
+                <div class="section-divider"></div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <span class="item-icon" aria-hidden="true">🧊</span>
+                            <div>
+                                <div class="item-name">Mojito Cup (1)</div>
+                                <div class="item-description">Refreshing minty delight</div>
+                            </div>
                         </div>
+                        <span class="item-price">15 AED</span>
                     </div>
-                    <span class="item-price">12 AED</span>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Candies Section -->
-        <section class="section candies-section">
-            <div class="section-header">
-                <h2 class="section-title">Candies</h2>
-                <div class="candy-decoration">🍭🍬🍫</div>
-            </div>
-            <div class="section-divider"></div>
-            <div class="menu-items">
-                <div class="menu-item">
-                    <div class="item-info">
-                        <span class="item-icon">🍬</span>
-                        <div>
-                            <div class="item-name">Candy Bag (100 g)</div>
-                            <div class="item-description">Assorted sweet treats</div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <span class="item-icon" aria-hidden="true">🧃</span>
+                            <div>
+                                <div class="item-name">Fruit Punch</div>
+                                <div class="item-description">Mixed fruit refreshment</div>
+                            </div>
                         </div>
+                        <span class="item-price">12 AED</span>
                     </div>
-                    <span class="item-price">10 AED</span>
                 </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <span class="item-icon">🍫</span>
-                        <div>
-                            <div class="item-name">Chocolate Box</div>
-                            <div class="item-description">Premium chocolate selection</div>
-                        </div>
-                    </div>
-                    <span class="item-price">25 AED</span>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Lucky Games Section -->
-        <section class="section games-section">
-            <div class="section-header">
-                <h2 class="section-title">Lucky Games / Activities</h2>
-                <div class="candy-decoration">🎈🎮🪙</div>
-            </div>
-            <div class="section-divider"></div>
-            <div class="menu-items">
-                <div class="menu-item">
-                    <div class="item-info">
-                        <span class="item-icon">🎯</span>
-                        <div>
-                            <div class="item-name">1 Lucky Game</div>
-                            <div class="item-description">Try your luck once</div>
-                        </div>
-                    </div>
-                    <span class="item-price">5 AED</span>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <span class="item-icon">🎯🎯🎯</span>
-                        <div>
-                            <div class="item-name">3 Lucky Games</div>
-                            <div class="item-description">Triple the fun</div>
-                        </div>
-                    </div>
-                    <span class="item-price">10 AED</span>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <span class="item-icon">🎈</span>
-                        <div>
-                            <div class="item-name">Balloon </div>
-                            <div class="item-description">FREE</div>
-                        </div>
-                    </div>
-                    <span class="free-item">FREE with any order</span>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <span class="item-icon">🪙</span>
-                        <div>
-                            <div class="item-name">Coin Game (Bowl & Cup)</div>
-                            <div class="item-description">Win Candy Bag or Small Mojito</div>
-                        </div>
-                    </div>
-                    <span class="free-item">FREE with any order</span>
-                </div>
-            </div>
-        </section>
-        <!-- Introduction Section -->
-        <section class="intro-section">
-            <p>Welcome to LuckySweets.ae, your destination for delicious treats and fun games in the UAE!</p>
-            <p>We offer a variety of candies, refreshing drinks, and exciting lucky games for all ages.</p>
+            </section>
             
-            <div class="cta-buttons">
-                <a href="tel:+971501234567" class="cta-button cta-primary">
-                    <span>📞</span> Call to Order
-                </a>
-                <a href="https://maps.google.com" class="cta-button cta-secondary">
-                    <span>📍</span> Find Us
-                </a>
-            </div>
+            <!-- Candies Section -->
+            <section class="section candies-section" aria-labelledby="candies-title">
+                <div class="section-header">
+                    <h2 id="candies-title" class="section-title">Candies</h2>
+                    <div class="candy-decoration" aria-hidden="true">🍭🍬🍫</div>
+                </div>
+                <div class="section-divider"></div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <span class="item-icon" aria-hidden="true">🍬</span>
+                            <div>
+                                <div class="item-name">Candy Bag (100 g)</div>
+                                <div class="item-description">Assorted sweet treats</div>
+                            </div>
+                        </div>
+                        <span class="item-price">10 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <span class="item-icon" aria-hidden="true">🍫</span>
+                            <div>
+                                <div class="item-name">Chocolate Box</div>
+                                <div class="item-description">Premium chocolate selection</div>
+                            </div>
+                        </div>
+                        <span class="item-price">25 AED</span>
+                    </div>
+                </div>
+            </section>
             
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span>📱</span>
-                    <span>+971 50 123 4567</span>
+            <!-- Lucky Games Section -->
+            <section class="section games-section" aria-labelledby="games-title">
+                <div class="section-header">
+                    <h2 id="games-title" class="section-title">Lucky Games / Activities</h2>
+                    <div class="candy-decoration" aria-hidden="true">🎈🎮🪙</div>
                 </div>
-                <div class="contact-item">
-                    <span>✉️</span>
-                    <span>info@luckysweets.ae</span>
+                <div class="section-divider"></div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <span class="item-icon" aria-hidden="true">🎯</span>
+                            <div>
+                                <div class="item-name">1 Lucky Game</div>
+                                <div class="item-description">Try your luck once</div>
+                            </div>
+                        </div>
+                        <span class="item-price">5 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <span class="item-icon" aria-hidden="true">🎯🎯🎯</span>
+                            <div>
+                                <div class="item-name">3 Lucky Games</div>
+                                <div class="item-description">Triple the fun</div>
+                            </div>
+                        </div>
+                        <span class="item-price">10 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <span class="item-icon" aria-hidden="true">🎈</span>
+                            <div>
+                                <div class="item-name">Balloon</div>
+                                <div class="item-description">Complimentary with any order</div>
+                            </div>
+                        </div>
+                        <span class="free-item">FREE</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <span class="item-icon" aria-hidden="true">🪙</span>
+                            <div>
+                                <div class="item-name">Coin Game (Bowl & Cup)</div>
+                                <div class="item-description">Win Candy Bag or Small Mojito</div>
+                            </div>
+                        </div>
+                        <span class="free-item">FREE with purchase</span>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <span>🕒</span>
-                    <span>Open Daily: 10 AM - 10 PM</span>
+            </section>
+            
+            <!-- Introduction Section -->
+            <section class="intro-section">
+                <p>Welcome to LuckySweets.ae, your destination for delicious treats and fun games in the UAE!</p>
+                <p>We offer a variety of candies, refreshing drinks, and exciting lucky games for all ages.</p>
+                
+                <div class="cta-buttons">
+                    <a href="tel:+971501234567" class="cta-button cta-primary" aria-label="Call to place an order">
+                        <span aria-hidden="true">📞</span> Call to Order
+                    </a>
+                    <a href="https://maps.google.com" class="cta-button cta-secondary" aria-label="View our location on Google Maps">
+                        <span aria-hidden="true">📍</span> Find Us
+                    </a>
                 </div>
-            </div>
-        </section>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span aria-hidden="true">📱</span>
+                        <span>+971 50 123 4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <span aria-hidden="true">✉️</span>
+                        <a href="mailto:info@luckysweets.ae">info@luckysweets.ae</a>
+                    </div>
+                    <div class="contact-item">
+                        <span aria-hidden="true">🕒</span>
+                        <span>Open Daily: 10 AM - 10 PM</span>
+                    </div>
+                </div>
+            </section>
+        </main>
         
-        <footer class="footer">
+        <footer class="footer" role="contentinfo">
             <div class="social-links">
-                <a href="https://instagram.com/luckysweets.ae" class="social-link instagram" target="_blank" aria-label="Follow us on Instagram">
-                    <i class="fab fa-instagram"></i>
+                <a href="https://instagram.com/luckysweets.ae" class="social-link instagram" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
                 </a>
-                <a href="https://tiktok.com/@luckysweets.ae" class="social-link tiktok" target="_blank" aria-label="Follow us on TikTok">
-                    <i class="fab fa-tiktok"></i>
+                <a href="https://tiktok.com/@luckysweets.ae" class="social-link tiktok" target="_blank" rel="noopener" aria-label="Follow us on TikTok">
+                    <i class="fab fa-tiktok" aria-hidden="true"></i>
                 </a>
             </div>
             <p>All games are subject to availability. Winners must be present to claim prize.</p>
