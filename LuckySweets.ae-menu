@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuckySweets.ae - Where Sweet Meets Luck!</title>
+    <meta name="description" content="LuckySweets.ae offers delicious candies, refreshing drinks, and fun lucky games in the UAE. Visit us for a sweet experience!">
+    <!-- Add font-display for better loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;500;600;700&display=swap&font-display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --light-sky-blue: #BBDEFB;
+            --dark-gray: #333333;
+            --forest-green: #2E7D32;
+            --magenta: #D81B60;
+            --golden-yellow: #FFD600;
+            --soft-pink: #F48FB1;
+            --lilac: #CE93D8;
+            --chocolate-brown: #5D4037;
+            --text-secondary: #444; /* Improved contrast */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--light-sky-blue);
+            color: var(--dark-gray);
+            padding: 20px;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255,255,255,0.4) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255,255,255,0.4) 0%, transparent 20%);
+        }
+        
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background-color: white;
+            border-radius: 30px;
+            padding: 35px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Candy border effect */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: repeating-linear-gradient(90deg, 
+                var(--forest-green) 0, var(--forest-green) 20px,
+                var(--magenta) 20px, var(--magenta) 40px,
+                var(--golden-yellow) 40px, var(--golden-yellow) 60px,
+                var(--soft-pink) 60px, var(--soft-pink) 80px,
+                var(--lilac) 80px, var(--lilac) 100px,
+                var(--chocolate-brown) 100px, var(--chocolate-brown) 120px);
+            border-radius: 30px 30px 0 0;
+        }
+        
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-top: 15px;
+            position: relative;
+        }
+        
+        .logo {
+            font-family: 'Fredoka One', cursive;
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--magenta), var(--soft-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 4px 4px 0 rgba(0,0,0,0.08);
+        }
+        
+        .logo::before,
+        .logo::after {
+            content: '🍬';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.1));
+            /* Hide from screen readers */
+            aria-hidden: true;
+        }
+        
+        .logo::before { left: -50px; }
+        .logo::after { right: -50px; }
+        
+        .slogan {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--forest-green);
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 0 rgba(255,255,255,0.8);
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: rgba(255,255,255,0.7);
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        
+        /* Section Styles */
+        .section {
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .section-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2rem;
+            margin-right: 15px;
+            position: relative;
+            z-index: 2;
+            padding: 10px 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        
+        .candy-decoration {
+            position: absolute;
+            font-size: 1.8rem;
+            z-index: 1;
+            right: 0;
+            opacity: 0.8;
+            filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.1));
+            /* Decorative — hide from screen readers */
+            aria-hidden: true;
+        }
+        
+        .section-divider {
+            height: 5px;
+            border-radius: 3px;
+            margin: 15px 0 25px;
+            background: linear-gradient(90deg, var(--forest-green), var(--magenta), var(--golden-yellow), var(--soft-pink), var(--lilac), var(--chocolate-brown));
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .menu-items {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        }
+        
+        .item-info {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+        
+        .item-icon {
+            margin-right: 15px;
+            font-size: 1.8rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            /* Decorative icon */
+            aria-hidden: true;
+        }
+        
+        .menu-item:hover .item-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .item-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .item-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+        }
+        
+        /* Base price style */
+        .item-price,
+        .free-item {
+            font-weight: 800;
+            padding: 8px 15px;
+            border-radius: 25px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .menu-item:hover .item-price {
+            transform: scale(1.05);
+        }
+        
+        /* Section-specific styles */
+        .drinks-section .section-title {
+            color: white;
+            background: linear-gradient(135deg, var(--forest-green), #4CAF50);
+        }
+        
+        .drinks-section .menu-item {
+            background: linear-gradient(135deg, #e3f2fd, #f0f8ff);
+        }
+        
+        .drinks-section .menu-item::before {
+            background: linear-gradient(to bottom, var(--forest-green), #4CAF50);
+        }
+        
+        .drinks-section .item-price {
+            color: var(--forest-green);
+            border: 2px solid var(--forest-green);
+        }
+        
+        .candies-section .section-title {
+            color: white;
+            background: linear-gradient(135deg, var(--magenta), #EC407A);
+        }
+        
+        .candies-section .menu-item {
+            background: linear-gradient(135deg, #fce4ec, #fdf2f8);
+        }
+        
+        .candies-section .menu-item::before {
+            background: linear-gradient(to bottom, var(--soft-pink), #F06292);
+        }
+        
+        .candies-section .item-price {
+            color: var(--magenta);
+            border: 2px solid var(--magenta);
+        }
+        
+        .games-section .section-title {
+            color: white;
+            background: linear-gradient(135deg, var(--chocolate-brown), #795548);
+        }
+        
+        .games-section .menu-item {
+            background: linear-gradient(135deg, #fff8e1, #fffde7);
+        }
+        
+        .games-section .menu-item::before {
+            background: linear-gradient(to bottom, var(--golden-yellow), #FFEE58);
+        }
+        
+        .games-section .item-price {
+            color: var(--chocolate-brown);
+            border: 2px solid var(--chocolate-brown);
+        }
+        
+        .free-item {
+            color: var(--forest-green);
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+            border: 2px dashed var(--forest-green);
+        }
+        
+        /* New elements */
+        .intro-section {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: linear-gradient(135deg, #fff8e1, #fffde7);
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+        }
+        
+        .intro-section p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .cta-button {
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+        
+        .cta-primary {
+            background: linear-gradient(135deg, var(--magenta), var(--soft-pink));
+            color: white;
+        }
+        
+        .cta-secondary {
+            background: white;
+            color: var(--forest-green);
+            border: 2px solid var(--forest-green);
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 2px dashed var(--lilac);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '🍭🍬🍫';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 0 15px;
+            font-size: 1.2rem;
+            aria-hidden: true;
+        }
+        
+        /* Floating candies animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+        
+        .floating-candy {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 4s ease-in-out infinite;
+            opacity: 0.8;
+            z-index: 0;
+            filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.2));
+            /* Hide from screen readers */
+            aria-hidden: true;
+        }
+        
+        .candy-1 { top: 8%; left: 4%; animation-delay: 0s; }
+        .candy-2 { top: 15%; right: 6%; animation-delay: 0.7s; }
+        .candy-3 { bottom: 25%; left: 5%; animation-delay: 1.4s; }
+        .candy-4 { bottom: 12%; right: 4%; animation-delay: 2.1s; }
+        .candy-5 { top: 40%; left: 8%; animation-delay: 0.4s; }
+        .candy-6 { top: 60%; right: 7%; animation-delay: 1.8s; }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px 20px;
+                border-radius: 25px;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .logo::before,
+            .logo::after {
+                font-size: 1.6rem;
+            }
+            
+            .logo::before { left: -35px; }
+            .logo::after { right: -35px; }
+            
+            .slogan {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 1.7rem;
+            }
+            
+            .menu-item {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
+            
+            .item-price,
+            .free-item {
+                align-self: flex-end;
+                margin-top: 10px;
+            }
+            
+            .floating-candy {
+                display: none;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .logo::before,
+            .logo::after {
+                font-size: 1.3rem;
+            }
+            
+            .logo::before { left: -25px; }
+            .logo::after { right: -25px; }
+            
+            .slogan {
+                font-size: 1.1rem;
+                padding: 6px 15px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+                padding: 8px 15px;
+            }
+            
+            .item-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.5rem;
+            }
+            
+            .item-name {
+                font-size: 1.1rem;
+            }
+            
+            .item-price,
+            .free-item {
+                font-size: 1.2rem;
+            }        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Floating candies (decorative) -->
+        <div class="floating-candy candy-1">🍭</div>
+        <div class="floating-candy candy-2">🍬</div>
+        <div class="floating-candy candy-3">🍫</div>
+        <div class="floating-candy candy-4">🍡</div>
+        <div class="floating-candy candy-5">🧁</div>
+        <div class="floating-candy candy-6">🎂</div>
+        
+        <header class="header">
+            <h1 class="logo">LuckySweets.ae</h1>
+            <p class="slogan">Where Sweet Meets Luck!</p>
+        </header>
+        
+        <!-- Introduction Section -->
+        <section class="intro-section">
+            <p>Welcome to LuckySweets.ae, your destination for delicious treats and fun games in the UAE!</p>
+            <p>We offer a variety of candies, refreshing drinks, and exciting lucky games for all ages.</p>
+            
+            <div class="cta-buttons">
+                <a href="tel:+971501234567" class="cta-button cta-primary">
+                    <span>📞</span> Call to Order
+                </a>
+                <a href="https://maps.google.com" class="cta-button cta-secondary">
+                    <span>📍</span> Find Us
+                </a>
+            </div>
+            
+            <div class="contact-info">
+                 <div class="contact-item">
+                    <span>🕒</span>
+                    <span>Open Daily: 6 PM - 11 PM</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Drinks Section -->
+        <section class="section drinks-section">
+            <div class="section-header">
+                <h2 class="section-title">Drinks</h2>
+                <div class="candy-decoration">🥤🍹🧊</div>
+            </div>
+            <div class="section-divider"></div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-info">
+                        <span class="item-icon">🧊</span>
+                        <div>
+                            <div class="item-name">Mojito Cup (1)</div>
+                            <div class="item-description">Refreshing minty delight</div>
+                        </div>
+                    </div>
+                    <span class="item-price">15 AED</span>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <span class="item-icon">🧃</span>
+                        <div>
+                            <div class="item-name">Fruit Punch</div>
+                            <div class="item-description">Mixed fruit refreshment</div>
+                        </div>
+                    </div>
+                    <span class="item-price">12 AED</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Candies Section -->
+        <section class="section candies-section">
+            <div class="section-header">
+                <h2 class="section-title">Candies</h2>
+                <div class="candy-decoration">🍭🍬🍫</div>
+            </div>
+            <div class="section-divider"></div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-info">
+                        <span class="item-icon">🍬</span>
+                        <div>
+                            <div class="item-name">Candy Bag (100 g)</div>
+                            <div class="item-description">Assorted sweet treats</div>
+                        </div>
+                    </div>
+                    <span class="item-price">10 AED</span>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <span class="item-icon">🍫</span>
+                        <div>
+                            <div class="item-name">Chocolate Box</div>
+                            <div class="item-description">Premium chocolate selection</div>
+                        </div>
+                    </div>
+                    <span class="item-price">25 AED</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Lucky Games Section -->
+        <section class="section games-section">
+            <div class="section-header">
+                <h2 class="section-title">Lucky Games / Activities</h2>
+                <div class="candy-decoration">🎈🎮🪙</div>
+            </div>
+            <div class="section-divider"></div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-info">
+                        <span class="item-icon">🎯</span>
+                        <div>
+                            <div class="item-name">1 Lucky Game</div>
+                            <div class="item-description">Try your luck once</div>
+                        </div>
+                    </div>
+                    <span class="item-price">5 AED</span>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <span class="item-icon">🎯🎯🎯</span>
+                        <div>
+                            <div class="item-name">3 Lucky Games</div>
+                            <div class="item-description">Triple the fun</div>
+                        </div>
+                    </div>
+                    <span class="item-price">10 AED</span>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <span class="item-icon">🪙</span>
+                        <div>
+                            <div class="item-name">Coin Game (Bowl & Cup)</div>
+                            <div class="item-description">Win Candy Bag or Small Mojito</div>
+                        </div>
+                    </div>
+                    <span class="free-item">FREE with any order</span>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <span class="item-icon">🎈</span>
+                        <div>
+                            <div class="item-name">Balloon </div>
+                            <div class="item-description">FREE</div>
+                        </div>
+                    </div>
+                    <span class="free-item">FREE with any order</span>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <p>All games are subject to availability. Winners must be present to claim prize.</p>
+            <p>Follow us on social media for special offers!</p>
+        </footer>
+    </div>
+</body>
+</html>
