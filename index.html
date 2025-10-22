@@ -8,7 +8,7 @@
     <!-- Add font-display for better loading -->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;500;600;700&display=swap&font-display=swap" rel="stylesheet">
     <!-- Font Awesome for social icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css  ">
     <style>
         :root {
             --light-sky-blue: #BBDEFB;
@@ -120,6 +120,40 @@
             background-color: rgba(255,255,255,0.7);
             border-radius: 50px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        
+        /* QR Code Styles */
+        .qr-container {
+            margin: 20px auto;
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            border: 2px dashed var(--lilac);
+        }
+        
+        .qr-code {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        
+        .qr-text {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 10px;
+            font-weight: 600;
         }
         
         /* Section Styles */
@@ -510,6 +544,11 @@
                 align-items: center;
                 gap: 10px;
             }
+            
+            .qr-code {
+                width: 120px;
+                height: 120px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -557,6 +596,15 @@
             .free-item {
                 font-size: 1.2rem;
             }
+            
+            .qr-code {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .qr-text {
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -571,18 +619,28 @@
         <div class="floating-candy candy-6">🎂</div>
         
         <header class="header">
-      <h1 class="logo" style="font-family: 'Fredoka One', cursive; font-size: 3.2rem; margin: 0; padding: 0; background: linear-gradient(135deg, #D81B60, #F48FB1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">LuckySweets.ae</h1>
+            <h1 class="logo" style="font-family: 'Fredoka One', cursive; font-size: 3.2rem; margin: 0; padding: 0; background: linear-gradient(135deg, #D81B60, #F48FB1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">LuckySweets.ae</h1>
             <div style="font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 1.5rem; color: #2E7D32; margin-top: 10px; display: block;">
                 Where Sweet Meets Luck!
             </div>
+            
+            <!-- QR Code Section -->
+            <div class="qr-container">
+                <div class="qr-code">
+                    <!-- Using a QR code generator API to create the QR code -->
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://luckysweets-ae.vercel.app/" alt="QR Code for LuckySweets.ae">
+                </div>
+                <div class="qr-text">Scan to visit our website</div>
+            </div>
+            
             <div style="font-family: 'Quicksand', sans-serif; font-size: 1.2rem; color: #5D4037; font-weight: 600; margin-top: 12px; display: block;">
                 Follow us, sweeties! 💖
             </div>
             <div class="social-links">
-                <a href="https://instagram.com/luckysweets.ae" class="social-link instagram" target="_blank" aria-label="Follow us on Instagram">
+                <a href="https://instagram.com/luckysweets.ae  " class="social-link instagram" target="_blank" aria-label="Follow us on Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://tiktok.com/@luckysweets.ae" class="social-link tiktok" target="_blank" aria-label="Follow us on TikTok">
+                <a href="https://tiktok.com/@luckysweets.ae  " class="social-link tiktok" target="_blank" aria-label="Follow us on TikTok">
                     <i class="fab fa-tiktok"></i>
                 </a>
             </div>
@@ -706,7 +764,7 @@
                <!-- <a href="tel:+971501234567" class="cta-button cta-primary">
                     <span>📞</span> Call to Order
                 </a>-->
-                <a href="https://maps.google.com" class="cta-button cta-secondary">
+                <a href="https://maps.google.com  " class="cta-button cta-secondary">
                     <span>📍</span> Find Us
                 </a>
             </div>
@@ -729,10 +787,10 @@
         
         <footer class="footer">
             <div class="social-links">
-                <a href="https://instagram.com/luckysweets.ae" class="social-link instagram" target="_blank" aria-label="Follow us on Instagram">
+                <a href="https://instagram.com/luckysweets.ae  " class="social-link instagram" target="_blank" aria-label="Follow us on Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://tiktok.com/@luckysweets.ae" class="social-link tiktok" target="_blank" aria-label="Follow us on TikTok">
+                <a href="https://tiktok.com/@luckysweets.ae  " class="social-link tiktok" target="_blank" aria-label="Follow us on TikTok">
                     <i class="fab fa-tiktok"></i>
                 </a>
             </div>
